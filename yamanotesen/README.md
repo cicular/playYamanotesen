@@ -42,3 +42,30 @@ Springと違い、ControllerのアノテーションでURLを定義しない
 Mavenよりも設定記法が独特  
 依存関係の解決も少し癖あり  
 
+## アノテーション
+PlayではSpringのように、役割を示すためのアノテーションは基本的に使いません。  
+Spring Bootの@Controller, @Service, @Repositoryのようなステレオタイプアノテーション文化は、Playにはほぼありません。  
+ただし、アノテーション自体は使います。用途が違います。  
+  
+### Springの世界  
+Springは  
+・クラスにアノテーションを付ける    
+・フレームワークがスキャンする  
+・コンポーネントとして登録する  
+というアノテーション駆動型DIです。  
+  
+### Playの世界  
+Playは  
+・クラスに役割アノテーションを付けない  
+・ルーティングはroutesファイルで定義（Controllerであるかどうかは、routesファイルが決める）  
+・DIはコンストラクタ注入が基本  
+  
+### Playで使う代表的なアノテーション  
+Playでよく使うのは次の程度です。  
+#### @Inject
+Springの@Autowiredに近い。  
+#### @Singleton
+#### @With
+#### @Entity
+#### @Table(name="users")
+
